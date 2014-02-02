@@ -40,7 +40,7 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
   <jdoc:include type="head" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"
-
+  
   <!-- Stylesheets -->
 
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/style/bootstrap.css" type="text/css" />
@@ -256,5 +256,15 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
     </script>
   <!-- JS -->
 
-  </body>
+	<!-- Random showcase image -->
+	<script language="JavaScript" type="text/javascript">
+		var $j = jQuery.noConflict();
+		$j(document).ready(function() {
+			var bgNum = Math.floor(Math.random() * 6);
+			$j('#showcase').css("background", "url('/templates/masterbootstrap/img/fotoBG_" + bgNum + ".jpg') no-repeat");
+			$j('#showcase').css("background-size", "contain"); 
+		});
+	</script>
+
+	</body>
 </html>

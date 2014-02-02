@@ -2,7 +2,6 @@
 /* CSS Document */
 /* style by Gonzalo Suez, Matus Repka */
 
-/*
 @font-face {
   font-family: 'EngeExp';
   src: url('../img/engebrechtre/tt/engebrechtreEx.ttf') format('truetype');
@@ -18,7 +17,6 @@
   font-style: normal;
   font-weight: normal;
 }
-*/
 
 /*ESTRUCTURA*/
 body {
@@ -125,15 +123,21 @@ background-color:#ddd;
 }
 
 .page-header {
-	width: 90%;
+	width: 100%;
 	margin: 25px auto 0px;
 	padding: 0px;
+	border-bottom: 1px solid #eeeeee;
 }
 
 h3 {
 	width: 90%;
 	margin: 20px auto 0px;
 	padding: 0px;
+	font-size: 24px;
+	line-height: 40px;
+	font-weight: bold;
+	color: #900000;
+	display: block;
 }
 
 #content .moduletable,#feature .moduletable,#sidebar .moduletable,#logo .moduletable,#showcase .moduletable,#bottom .moduletable,#footer .moduletable,#main .moduletable, #above .moduletable, #logo .moduletable, #showcase .moduletable {
@@ -157,12 +161,23 @@ margin:5px;
 width:160px;
 }
 
-.custom,.item-page {
+.custom {
 padding:10px;
 }
 
-.item-page {
-margin-bottom:20px;
+.item-page, .contact {
+	padding: 15px 5% 0px;
+	margin-bottom:20px;
+}
+
+.item-page > p {
+	padding-left: 3%;
+	padding-top: 15px;
+	max-width: 720px;
+}
+
+.item-page > :first-child  + p {
+	padding-top: 45px;
 }
 
 .weblink-category {
@@ -491,7 +506,7 @@ a.menu:after, .dropdown-toggle:after {
 #topMenu a {
   font-size: 18px;
   font-weight: bold;
-  font-family: 'EngeExp', sans-serif;
+  font-family: 'EngeExp', 'Gill Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   line-height: 20px;
 }
@@ -539,7 +554,7 @@ a.menu:after, .dropdown-toggle:after {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  background: url('../img/fotoBG.png') no-repeat;
+  background: url('../img/fotoBG_0.jpg') no-repeat;
   background-size: contain;
   display: block;
   z-index: 1;
@@ -574,7 +589,7 @@ a.menu:after, .dropdown-toggle:after {
   margin: 0px auto 0px;
  }
  
- /********** CLANKY ******************/
+ /********** CUSTOM ******************/
 .item-pageHome > p {
 	font-size: 18px;
 	line-height: 26px;
@@ -587,38 +602,30 @@ a.menu:after, .dropdown-toggle:after {
 	padding-top: 45px;
 }
 
-.item-pageClanek > p {
-	padding-left: 10%;
-	padding-top: 15px;
-	max-width: 720px;
-}
-
-.item-pageClanek > :first-child  + p {
-	padding-top: 45px;
-}
-
-#napojovyListek {
-	position: relative;
-	left: 12%;
-	max-width: 640px;
+.napojovyListek {
+	width: 44%;
+	max-width: 360px;
 	line-height: 25px;
-	margin-bottom: 35px;
+	margin: 35px 3%;
+	display: inline-block;
+	vertical-align: top;
 }
 
-#napojovyListek th {
-   padding-top: 10px;
+.napojovyListek th {
+   padding-top: 15px;
    text-align: left;
-   font-size: 20px;
+   font-size: 18px;
    font-weight: bold;
+   color: #900000;
 }
 
-#napojovyListek td.cena {
+.napojovyListek td.cena {
 	text-align: right;
 }
    
-#napojovyListek td.dleNabidky {
-  font-size: 14px;
-  line-height: 16px;
+.napojovyListek td.dleNabidky {
+  font-size: 12px;
+  line-height: 15px;
   font-style: italic;
   padding-bottom: 5px;
 }
