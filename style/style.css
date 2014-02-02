@@ -1,7 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
-/* style by Gonzalo Suez */
+/* style by Gonzalo Suez, Matus Repka */
 
+/*
 @font-face {
   font-family: 'EngeExp';
   src: url('../img/engebrechtre/tt/engebrechtreEx.ttf') format('truetype');
@@ -17,15 +18,16 @@
   font-style: normal;
   font-weight: normal;
 }
+*/
 
 /*ESTRUCTURA*/
 body {
 color:#444;
-font-size:12px;
-line-height:24px;
-background:url(../img/bg.jpg) repeat scroll 0 0 #eee;
-font-family: 'EngeExp', Verdana, sans-serif;
-padding-top:0!important;
+font-size: 16px;
+line-height: 24px;
+background: url('../img/bg.jpg') repeat scroll 0 0 #eee;
+font-family: ‘Gill Sans’, ‘Lucida Grande’, ‘Lucida Sans Unicode’, Verdana, Helvetica, Arial, sans-serif;
+padding-top: 0!important;
 }
 
 .bold {
@@ -89,11 +91,11 @@ text-decoration:none;
 }
 
 .color {
-background-color:#08c;
+background-color:#900000;
 }
 
-.blue {
-background-color:#5990DE;
+.red {
+background-color:#e23c3c;
 color:#fff;
 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
@@ -118,13 +120,20 @@ background-color:#ddd;
 }
 
 .breadcrumbs {
-background: none repeat scroll 0 0 #DDDDDD;
-margin-bottom: 20px;
+	background: none repeat scroll 0 0 #DDDDDD;
+	margin-bottom: 20px;
 }
 
 .page-header {
-margin:5px;
-padding:0;
+	width: 90%;
+	margin: 25px auto 0px;
+	padding: 0px;
+}
+
+h3 {
+	width: 90%;
+	margin: 20px auto 0px;
+	padding: 0px;
 }
 
 #content .moduletable,#feature .moduletable,#sidebar .moduletable,#logo .moduletable,#showcase .moduletable,#bottom .moduletable,#footer .moduletable,#main .moduletable, #above .moduletable, #logo .moduletable, #showcase .moduletable {
@@ -196,6 +205,9 @@ form {
     margin: 0px;
 }
 
+dt, dd {
+	line-height: 24px;
+}
 
 /*FOOTER*/
 
@@ -243,15 +255,15 @@ html, body {
 }
 
 .social-links,footer,.navbar-inner {
-padding-right:20px;
+	padding-right:20px;
 }
 
 .block .logo {
-text-align:center;
+	text-align:center;
 }
 
 header .form {
-padding-top:0;
+	padding-top:0;
 }
 
 ul.the-icons {
@@ -278,15 +290,15 @@ ul.the-icons {
 
 @media only screen and (max-width : 480px){
 	.nav-collapse, .nav {width:100%; margin-top:10px!important;}
-.navbar-inner{padding-left:20px;}
-.menu > li{float:none!important;}
+	.navbar-inner{padding-left:20px;}
+	.menu > li{float:none!important;}
 
 }
 
 @media (max-width: 767px) {
 	.border {margin:10px 0 5px;}
 	.logo{text-align:center!important;}
-.addthis_toolbox.addthis_default_style.addthis_32x32_style {display:none;}
+	.addthis_toolbox.addthis_default_style.addthis_32x32_style {display:none;}
 
 }
 
@@ -433,17 +445,17 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 .menu > li > a:hover, .menu > li.active > a, .menu > li.parent:hover > a, .menu > li.active.parent > a, .menu > li > span.separator:hover, .menu > li.active > span.separator, .menu > li.parent:hover > span.separator, .menu > li.active.parent > span.separator {
-    color: #000;
+    color: #900000;
 }
 .menu ul {
-    border-top: 2px solid #DE3510;
+    border-top: 2px solid #900000;
 }
 .menu ul li a:hover, .menu ul li.active > a, .menu ul li.parent:hover > a, .menu ul li.active.parent > a, .menu ul li span.separator:hover, .menu ul li.active > span.separator, .menu ul li.parent:hover > span.separator, .menu ul li.active.parent > span.separator {
-    background-color: #DE3510;
+    background-color: #900000;
     color: #FFFFFF;
 }
 .menu li.parent > span.caret, .menu ul li.parent > span.caret {
-    background-color: #DE3510;
+    background-color: #900000;
 }
 
 /* ELYSIUM */
@@ -478,7 +490,7 @@ a.menu:after, .dropdown-toggle:after {
 
 #topMenu a {
   font-size: 18px;
-  font-weight: 200;
+  font-weight: bold;
   font-family: 'EngeExp', sans-serif;
   text-transform: uppercase;
   line-height: 20px;
@@ -493,12 +505,12 @@ a.menu:after, .dropdown-toggle:after {
 
 #topMenu li a:hover {
   background-color: rgba(216, 216, 216, .12);
-  color: red;
+  color: #900000;
 }
 	
 #topMenu li.current a {
   background-color: rgba(216, 216, 216, .12);
-  color: red;
+  color: #900000;
 }
 
 #topMenu .item-101 a {
@@ -576,8 +588,6 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 .item-pageClanek > p {
-	font-size: 16px;
-	line-height: 25px;
 	padding-left: 10%;
 	padding-top: 15px;
 	max-width: 720px;
@@ -587,17 +597,12 @@ a.menu:after, .dropdown-toggle:after {
 	padding-top: 45px;
 }
 
-.item-pageClanek  div.page-header {
-	width: 90%;
-	margin: 25px auto 0px;
-}
-
 #napojovyListek {
 	position: relative;
 	left: 12%;
 	max-width: 640px;
-	font-size: 16px;
 	line-height: 25px;
+	margin-bottom: 35px;
 }
 
 #napojovyListek th {
