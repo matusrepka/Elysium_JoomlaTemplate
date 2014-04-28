@@ -476,8 +476,8 @@ a.menu:after, .dropdown-toggle:after {
 /* ELYSIUM */
  /********** GENERAL ******************/
 #navigation {
-	position: fixed;
-	top: 65px;
+	position: absolute;
+	top: 85px;
 	width: 100%;
 	background: url('../img/navBG.png');
 	overflow: hidden;
@@ -545,29 +545,9 @@ a.menu:after, .dropdown-toggle:after {
 	max-width: 247px;
 	height: auto;
 }
- 
- #showcase {
-  position: relative;
-  height: 100%;
-  max-height: 642px;
-  width: 100%;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  background: url('../img/fotoBG_0.jpg') no-repeat;
-  background-size: contain;
-  display: block;
-  z-index: 1;
-}
-
-#showcase:after {
-	padding-top: 46%;
-	display: block;
-	content: '';
-}
 
 #newsWrapper {
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
   bottom: 0px;
@@ -575,8 +555,56 @@ a.menu:after, .dropdown-toggle:after {
   display: block;
 }
 
+#showcase {
+	margin-bottom: 0px;
+}
+	
+#showcase  .carousel-inner  .item {
+	position: relative;
+	height: 100%;
+	max-height: 642px;
+	width: 100%;
+	max-width: 1400px;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	background-size: contain;
+}
+
+#showcase  .carousel-inner  .item:after {
+	padding-top: 46%;
+	display: block;
+	content: '';
+}
+
+#c0 {
+	background: url('../img/bg_foto00_xxl.jpg') no-repeat;
+}
+
+#c1 {
+	background: url('../img/bg_foto01_xxl.jpg') no-repeat;
+}
+
+#c2 {
+	background: url('../img/bg_foto02_xxl.jpg') no-repeat;
+}
+
+#c3 {
+	background: url('../img/bg_foto03_xxl.jpg') no-repeat;
+}
+
+#c4 {
+	background: url('../img/bg_foto04_xxl.jpg') no-repeat;
+}
+
+#c5 {
+	background: url('../img/bg_foto05_xxl.jpg') no-repeat;
+}
+
 #newsWrapper .container-fluid {
-  margin-top: 35%;
+  /* margin-top: 35%; */
+  position: relative;
+  top: -90px;
   padding-top: 15px;
   width: 100%;
   max-width: 1400px;

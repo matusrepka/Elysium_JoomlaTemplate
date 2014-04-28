@@ -56,27 +56,6 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
 
   <!--top-->
   <div id="wrap">
-  <!--Navigation-->
-	<?php if($this->countModules('navigation')) : ?>
-	<div id="navigation">           
-		<div class="navbar">
-		  <div class="navbar-inner">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
-			  <span class="icon-bar"></span> 
-			  <span class="icon-bar"></span> 
-			  <span class="icon-bar"></span> 
-			</a> 
-			<?php endif; ?>
-
-			<?php if($this->countModules('navigation')) : ?>
-			  <div class="nav-collapse">
-				<jdoc:include type="modules" name="navigation" style="none" />
-			  </div>
-			<?php endif; ?>
-		  </div>
-		</div>
-	</div>
-	<!--Navigation-->
   
   <?php if($this->countModules('top')) : ?>
     <div id="top">
@@ -111,19 +90,47 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
     <?php endif; ?>
 
     <!--fullwidth-->
+	<!--Navigation-->
+	<?php if($this->countModules('navigation')) : ?>
+	<div id="navigation">           
+		<div class="navbar">
+		  <div class="navbar-inner">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+			  <span class="icon-bar"></span> 
+			  <span class="icon-bar"></span> 
+			  <span class="icon-bar"></span> 
+			</a> 
+			<?php endif; ?>
+
+			<?php if($this->countModules('navigation')) : ?>
+			  <div class="nav-collapse">
+				<jdoc:include type="modules" name="navigation" style="none" />
+			  </div>
+			<?php endif; ?>
+		  </div>
+		</div>
+	</div>
+	<!--Navigation-->
 
     <!--Showcase-->
     <?php if($this->countModules('showcase')) : ?>
-      <div id="showcase">
-        <div id="newsWrapper">
-          <div class="container-fluid">
-			<div id="topPage"></div>
-            <div class="row-fluid">
-              <jdoc:include type="modules" name="showcase" style="block"/>
-            </div>
-          </div>
-        </div>
-      </div>
+	<div id="newsWrapper">
+		<div id="showcase" class="carousel">
+			<div class="carousel-inner">
+				<div id="c0" class="active item"></div>
+				<div id="c1" class="item"></div>
+				<div id="c2" class="item"></div>
+				<div id="c3" class="item"></div>
+				<div id="c4" class="item"></div>
+				<div id="c5" class="item"></div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<jdoc:include type="modules" name="showcase" style="block"/>
+			</div>
+		</div>
+	</div>
     <?php endif; ?>
     <!--Showcase-->
 
@@ -257,6 +264,7 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
   <!-- JS -->
 
 	<!-- Random showcase image -->
+	<!--
 	<script language="JavaScript" type="text/javascript">
 		var $j = jQuery.noConflict();
 		$j(document).ready(function() {
@@ -265,6 +273,15 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
 			$j('#showcase').css("background-size", "contain"); 
 		});
 	</script>
-
+	-->
+	
+	<!-- Bootstrap carousel -->
+	<script language="JavaScript" type="text/javascript">
+		var $j = jQuery.noConflict();
+		$j('.carousel').carousel({
+			interval: 10000
+		})
+	</script>	
+	
 	</body>
 </html>
