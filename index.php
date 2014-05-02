@@ -103,7 +103,7 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
 			<?php endif; ?>
 
 			<?php if($this->countModules('navigation')) : ?>
-			  <div class="nav-collapse">
+			  <div class="nav">
 				<jdoc:include type="modules" name="navigation" style="none" />
 			  </div>
 			<?php endif; ?>
