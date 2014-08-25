@@ -1,11 +1,11 @@
 function processFile(fileList) {
 	userFile = fileList[0];
 	file = new FileReader();
-	file.readAsText(userFile);
 	file.onload = function() {
 		createNapojak(file.result);
 		console.log('File open');
 	};
+	file.readAsText(userFile);
 }
 
 function createNapojak(data) { 
