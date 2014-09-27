@@ -56,6 +56,27 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
 
   <!--top-->
   <div id="wrap">
+	<!--Navigation-->
+	<?php if($this->countModules('navigation')) : ?>
+	<div id="navigation" class="fix">           
+		<div class="navbar">
+		  <div class="navbar-inner">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+			  <span class="icon-bar"></span> 
+			  <span class="icon-bar"></span> 
+			  <span class="icon-bar"></span> 
+			</a> 
+			<?php endif; ?>
+
+			<?php if($this->countModules('navigation')) : ?>
+			  <div class="nav">
+				<jdoc:include type="modules" name="navigation" style="none" />
+			  </div>
+			<?php endif; ?>
+		  </div>
+		</div>
+	</div>
+	<!--Navigation-->
   
   <?php if($this->countModules('top')) : ?>
     <div id="top">
@@ -90,27 +111,6 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
     <?php endif; ?>
 
     <!--fullwidth-->
-	<!--Navigation-->
-	<?php if($this->countModules('navigation')) : ?>
-	<div id="navigation">           
-		<div class="navbar">
-		  <div class="navbar-inner">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
-			  <span class="icon-bar"></span> 
-			  <span class="icon-bar"></span> 
-			  <span class="icon-bar"></span> 
-			</a> 
-			<?php endif; ?>
-
-			<?php if($this->countModules('navigation')) : ?>
-			  <div class="nav">
-				<jdoc:include type="modules" name="navigation" style="none" />
-			  </div>
-			<?php endif; ?>
-		  </div>
-		</div>
-	</div>
-	<!--Navigation-->
 
     <!--Showcase-->
     <?php if($this->countModules('showcase')) : ?>
@@ -259,9 +259,34 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
     <!--<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/application.js"></script> -->
     <!--<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/prettify.js"></script> -->
     <script type="text/javascript">
-            jQuery.noConflict();
-    </script>
+		var $j = jQuery.noConflict();
+		$j('.carousel').carousel({
+			interval: 10000
+		});
+		
+		function floatMenu () {
+			var el = $j('#navigation')
+			,  scrollTop = $j(window).scrollTop();
+			
+			if (scrollTop > 45) {
+				if (el.hasClass("fix")) {
+					el.removeClass("fix").addClass("float");
+				};
+			} else {
+				if (el.hasClass("float")) {
+					el.removeClass("float").addClass("fix");
+				};
+			};
+		};
+		
+		$j(document).ready(function(){
+			
+			$j(window)
+				.scroll(floatMenu);
+		});
+	</script>
   <!-- JS -->
+  
 
 	<!-- Random showcase image -->
 	<!--
@@ -273,15 +298,7 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
 			$j('#showcase').css("background-size", "contain"); 
 		});
 	</script>
-	-->
-	
-	<!-- Bootstrap carousel -->
-	<script language="JavaScript" type="text/javascript">
-		var $j = jQuery.noConflict();
-		$j('.carousel').carousel({
-			interval: 10000
-		})
-	</script>	
+	-->	
 	
 	</body>
 </html>
