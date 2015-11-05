@@ -86,6 +86,9 @@ text-decoration:none;
 
 #content {
     margin-bottom: 0px;
+	margin-top: 10px;
+/* 	top: -450px;
+	position: relative; */
 }
 
 .color {
@@ -480,7 +483,7 @@ a.menu:after, .dropdown-toggle:after {
 	background: url('../img/navBG.png');
 	overflow: hidden;
 	display: block;
-	z-index: 3;
+	z-index: 6;
 }
 #navigation.fix {
 	position: absolute;
@@ -569,10 +572,10 @@ a.menu:after, .dropdown-toggle:after {
 #showcase  .carousel-inner  .item {
 	position: relative;
 	height: 100%;
-	max-height: 642px;
+	/* max-height: 642px; */
 	width: 100%;
-	max-width: 1400px;
-	margin-top: 20px;
+	/* max-width: 1400px; */
+	/* margin-top: 20px; */
 	margin-left: auto;
 	margin-right: auto;
 	background-size: contain;
@@ -610,14 +613,24 @@ a.menu:after, .dropdown-toggle:after {
 
 #newsWrapper .container-fluid {
   /* margin-top: 35%; */
-  position: relative;
-  top: -90px;
+  
   padding-top: 15px;
-  width: 100%;
-  max-width: 1400px;
-  background: url('../img/novinkyBG.png') no-repeat;
+  min-width: 100%;
+  /* max-width: 1400px; */
+  background: url('../img/novinkyBG.png') repeat;
+  z-index: 5;
 }
 	
+#newsWrapper .container-fluid.fix {
+	position: absolute;
+	bottom: 30px;
+}
+
+#newsWrapper .container-fluid.float {
+	position: fixed;
+	top: 84px;
+}
+
 .mod-newsflash-adv__Novinky .item_introtext {
   font-size: 18px;
   width: 68%;

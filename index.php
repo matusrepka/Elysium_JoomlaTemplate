@@ -124,10 +124,10 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
 				<div id="c4" class="item"></div>
 				<div id="c5" class="item"></div>
 			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="row-fluid">
-				<jdoc:include type="modules" name="showcase" style="block"/>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<jdoc:include type="modules" name="showcase" style="block"/>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -264,25 +264,44 @@ $rightcolgrid	= $this->params->get('columnWidth', 3);
 			interval: 10000
 		});
 		
-		function floatMenu () {
-			var el = $j('#navigation')
-			,  scrollTop = $j(window).scrollTop();
+		function floatElements () {
+			var elMenu = $j('#navigation')
+			,  elNews = $j('#newsWrapper .container-fluid')
+			,  scrollTop = $j(window).scrollTop()
+			,  showHeight = $j('#showcase').height();
 			
 			if (scrollTop > 45) {
-				if (el.hasClass("fix")) {
-					el.removeClass("fix").addClass("float");
+				if (elMenu.hasClass("fix")) {
+					elMenu.removeClass("fix").addClass("float");
 				};
 			} else {
-				if (el.hasClass("float")) {
-					el.removeClass("float").addClass("fix");
+				if (elMenu.hasClass("float")) {
+					elMenu.removeClass("float").addClass("fix");
+				};
+			};
+			
+			if (scrollTop > (showHeight - 158)) {
+				if (elNews.hasClass("fix")) {
+					elNews.removeClass("fix").addClass("float");
+					calcPos();
+				};
+			} else {
+				if (elNews.hasClass("float")) {
+					elNews.removeClass("float").addClass("fix");
 				};
 			};
 		};
 		
-		$j(document).ready(function(){
+		function calcPos () {
+			var showHeight = $j('#showcase').height();
 			
-			$j(window)
-				.scroll(floatMenu);
+			if (elNews.hasClass("fix")) $j('#newsWrapper .container-fluid').css("bottom", "30px");
+		};
+		
+		$j(document).ready(function(){
+			$j('#newsWrapper .container-fluid').addClass('fix');
+			$j(window).scroll(floatElements).trigger("scroll");
+			$j(window).resize(calcPos).trigger("resize");
 		});
 	</script>
   <!-- JS -->
